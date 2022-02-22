@@ -97,7 +97,6 @@ static async fetch({ endpoint, params }) {
       params,
       method,
       body,
-      timeout: 10000,
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -118,7 +117,7 @@ static async apiCall(name, options) {
     }
 
     try {
-      const http = axios.create({ baseURL: this.serverUrl, timeout: 10000 });
+      const http = axios.create({ baseURL: this.serverUrl });
       
       const response =  await http.post(`/functions/sol-${name}`, options, {
         headers: { Accept: 'application/json', 'Content-Type': 'application/json' },

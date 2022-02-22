@@ -138,8 +138,8 @@ export interface paths {
   "/nft/{address}/{token_id}/metadata/resync": {
     /**
      * ReSync the metadata for an NFT
-     * * The metadata flag will request a resync of the metadata for an nft
-     * * The uri flag will request fetch the token_uri for an NFT and then fetch it's metadata. To be used when the token uri get updated
+     * * The metadata flag will request a the NFT's metadata from the already existing token_uri
+     * * The uri flag will fetch the latest token_uri from an NFT's contract
      */
     get: operations["reSyncMetadata"];
   };
@@ -2255,8 +2255,8 @@ export interface operations {
   };
   /**
    * ReSync the metadata for an NFT
-   * * The metadata flag will request a resync of the metadata for an nft
-   * * The uri flag will request fetch the token_uri for an NFT and then fetch it's metadata. To be used when the token uri get updated
+   * * The metadata flag will request a the NFT's metadata from the already existing token_uri
+   * * The uri flag will fetch the latest token_uri from an NFT's contract
    */
   reSyncMetadata: {
     parameters: {
